@@ -1,26 +1,6 @@
 import Head from 'next/head'
 import Header from '@components/Header'
 import Footer from '@components/Footer'
-$('.filterOptions').change(function(){
-
-    var theChosenLang = $('#langOption').find(':selected').attr('data-lang-option');
-
-    var theChosenCat = $('#categoryOption').find(':selected').attr('data-category-option');
-
-
-    $('.displayBox').css('display','none');
-    var selector = '.displayBox';
-    
-    if(theChosenLang != "all"){
-        selector += '[data-lang-option="'+ theChosenLang +'"]';
-    } 
-    if(theChosenCat != "all"){
-        selector += '[data-category-option="'+ theChosenCat +'"]';
-    }
-    
-    $(selector).fadeIn();
-
-}); 
 
 export default function Home() {
   return (
@@ -53,3 +33,25 @@ export default function Home() {
 </div>
   )
 }
+
+$('.filterOptions').change(function(){
+
+    var theChosenLang = $('#langOption').find(':selected').attr('data-lang-option');
+
+    var theChosenCat = $('#categoryOption').find(':selected').attr('data-category-option');
+
+
+    $('.displayBox').css('display','none');
+    var selector = '.displayBox';
+    
+    if(theChosenLang != "all"){
+        selector += '[data-lang-option="'+ theChosenLang +'"]';
+    } 
+    if(theChosenCat != "all"){
+        selector += '[data-category-option="'+ theChosenCat +'"]';
+    }
+    
+    $(selector).fadeIn();
+
+}); 
+
